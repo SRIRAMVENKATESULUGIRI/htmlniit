@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <label>Username : </label>    -->
+    <form action="" method="post" onsubmit="register()">
+            <input type="text" placeholder="Enter Username" id="username" name="username" required></br> 
+            <!-- <label>Password : </label>  -->
+            <input type="password" placeholder="Enter Password" id="password" name="password" required></br>
+            <input type="email" placeholder="Enter email" name="email" id="email"></br>
+            <input type="submit" value="register">
+        </form>
+            <script>
+                function register()
+                {
+                    var name = document.getElementById('name');
+                    var password = document.getElementById('pw');
+                    var name=document.querySelector("#username");
+                    var password=document.querySelector("#passsword");
+                     localStorage.setItem("username",name.value);
+                     localStorage.setItem("password",password.value);   
+                    if(localStorage!="undefined")
+                    {
+                        alert("register success");                                                                                                                                                                                                             
+                        event.preventDefault();
+                        localStorage.setItem("myname",name);
+                        localStorage.password==document.getElementById("password").value;
+                        localStorage.setItem("mypass",password);
+                    }
+                    else
+                    {
+                        alert("registration failed");
+                    }
+                }
+            </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>storage types</title>
+</head>
+<body>
+    <script>
+        var name="giri";
+        var password="giri123";
+        sessionStorage.setItem("username",name);
+       sessionStorage.setItem("password",password);
+
+       localStorage.setItem("myname",name);
+       localStorage.password=document.getElementById("password").value;
+ 
+
+       console.log(localStorage.getItem("myname"));
+    console.log(localStorage.password);
+
+       console.log(sessionStorage.getItem("username"));
+       console.log(sessionStorage.getItem("password"));
+    </script>
+</body>
+</html>

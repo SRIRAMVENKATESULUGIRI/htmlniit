@@ -1,0 +1,103 @@
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Login Page </title>  
+<style> 
+h1 {
+  font-size: 50px;
+  background: -webkit-linear-gradient(red,blue, #333);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}  
+Body {  
+  font-family:Mulish, Helvetica, sans-serif;  
+  background:linear-gradient(yellow,violet,pink)
+}  
+button {   
+       background-color:blue;   
+       width: 30%;  
+        color:white;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid black;   
+    }   
+ input[type=text], input[type=password],input[type=email] {   
+        width: 50%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+    input[type=submit],input[type=cancel]
+    {
+        border-radius: 50px;
+        width:200px;
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+        background: linear-gradient(yellow,white,blue);
+    }
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: 30%;   
+        padding: 12px 20px;  
+        margin: 8px 0px;  
+    }   
+        
+     
+ .container {   
+        padding: 25px;   
+        background :linear-gradient(red,pink,green)
+    }   
+    #userlogin
+    {
+        margin-left:400px;
+    }
+</style>   
+</head> 
+<body>    
+    <center> <h1> IRRS REGISTRATION PAGE </h1> </center>   
+    <form action="" method="post" onsubmit="register()">
+        <div id="userlogin">
+        <input type="text" placeholder="Enter Username" id="username" name="username" required></br> 
+        <!-- <label>Password : </label>  -->
+        <input type="password" placeholder="Enter Password" id="password" name="password" required></br>
+        <input type="password" placeholder="Enter Re-Password" id="repassword" name="repassword" required></br>
+        <input type="email" placeholder="Enter email" name="email" id="email"></br>
+        <input type="submit" value="register">
+        <input type="cancel" value="cancel">
+    </div>
+    </form>
+        <script>
+            function register()
+            {
+                var name = document.getElementById('name');
+                var password = document.getElementById('pw');
+                var name=document.querySelector("#username");
+                var password=document.querySelector("#passsword");
+                 localStorage.setItem("username",name.value);
+                 localStorage.setItem("password",password.value);   
+                if(localStorage!="undefined")
+                {
+                    alert("register success");                                                                                                                                                                                                             
+                    event.preventDefault();
+                    localStorage.setItem("myname",name);
+                    localStorage.password==document.getElementById("password").value;
+                    localStorage.setItem("mypass",password);
+                }
+                else
+                {
+                    alert("registration failed");
+                }
+            }
+        </script>
+</body>     
+</html>  

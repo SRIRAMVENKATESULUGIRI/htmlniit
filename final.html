@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RAILWAY RESERVATION SYSTEM</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.common.min.js">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<style>
+    h1::before
+    {
+        content:'IRRS';
+        background-color: yellow;
+        padding:20px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+    }
+    #sty
+    {
+        text-align: center;
+    }
+    
+    nav
+    {
+    display: flex;
+    flex-direction:row;     
+    justify-content: space-evenly;
+    /* justify-content: center; */
+    /* align-items: center; */
+    }
+
+    nav a
+    {
+        text-decoration: none;
+        
+    }
+    #myvid
+    {
+        margin-left: -400px;
+        margin-top: 30px;
+
+    }
+    input[type=submit]
+    {
+        border-radius: 50px;
+        width:200px;
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+        background: linear-gradient(yellow,white,blue);
+    }
+</style>
+</head>
+<body style=" background-image: linear-gradient(red, yellow,blue);">
+<h1 style="text-align: center;">INDIAN RAILWAY RESERVATION SYSTEM <i class="fas fa-train" style="color:blue"></i></h1>
+
+<div id="sty" style="border:2px solid black">
+    <nav>
+<a href="home.html">home</a>
+<a href="meals.html">meals</a>
+<a href="holpack.html">holiday packages</a>
+<a href="services.html">services at station</a>
+<a href="contact.html">contact us</a>
+</nav>
+<script>
+function val()
+{
+    var str1 = document.getElementById("t1");
+    var str2 = document.getElementById("t2");
+    var str3 = document.getElementById("datepicker");
+    var str4 = document.getElementById("t4");
+    if(str1.value=="-1")
+    {
+        alert("from");
+        return false;
+    }
+    else if(str2.value =="-1")
+    {
+        alert("to");
+        return false;
+    }
+    else if(str3.value.trim() =="")
+    {
+        alert("date of journey");
+        return false;
+    }
+    else if(str4.value =="-1")
+    {
+        alert("type of class");
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+    return true;
+}
+$( function() {
+    $( "#datepicker" ).datepicker({ minDate: 0, maxDate: "+30D" });
+  } );
+</script>
+</head>
+   <form onsubmit="return val()" action="group.html">
+    
+      
+          <caption><b>BOOK YOUR TICKETS HERE</b></caption><br>
+    
+          
+            <div>
+                <td align="left">FROM</td>
+                <select name="FROM" id="t1">
+                 <option value="-1" selected>[Choose yours]</option>
+                  <option value="1">CHENNAI</option>
+                  <option value="2">NELLORE</option>
+                   <option value="3">ONGOLE</option>
+                   <option value="4">TENALI</option>
+                   <option value="5">VIJAYAWADA</option>
+                   <option value="6">GUNTUR</option>
+                   <option value="7">JALANDHAR</option>
+                   <option value="8">CHANDIGARH</option>
+                   <option value="9">DELHI</option>
+                    <option value="10">BOMBAY</option>
+                  </select>
+            
+                <td align="right">TO</td>
+                <td>
+                 <select name="City" id="t2">
+                       <option value="-1" selected>[Choose yours]</option>
+                       <option value="1">AHMEDABAD</option>
+                       <option value="2">RAIPUR</option>
+                       <option value="3">CHENNAI</option>
+                       <option value="4">JABALPUR</option>
+                       <option value="5">JALANDHAR</option>
+                       <option value="6">SHRIDI</option>
+                       <option value="7">PHAGWARA</option>
+                       <option value="8">VIJAYAWADA</option>
+                       <option value="9">RAYAGADA</option>
+                       <option value="10">BANGLORE</option>
+                       <option value="11">GUNTUR</option>
+                       <option value="12">NELLORE</option>
+                       <option value="13">DELHI</option>
+                       <option value="14">BOMBAY</option>
+                       <option value="15">ONGOLE</option>
+                       <option value="16">TENALI</option>
+                    </select>
+                </td>
+        </tr>
+        <tr>
+                <td align="right">DATE OF JOURNEY</td>
+                <td><span>Date: <input type="text" id="datepicker"></span></td>
+        </tr>
+        <tr>
+                <td align="right">CLASS</td>
+                <td>
+                      <select name="CLASS" id="t4">
+                      <option value="-1" selected>[Choose yours]</option>
+                      <option value="1">SLEEPER</option>
+                      <option value="2">3 TIER</option>
+                      <option value="3">2 TIER</option>
+                      <option value="4">1 TIER</option>
+                      <option value="5">LADIES</option>
+                      <option value="6">SENIOR CITIZEN</option>
+                      <option value="7">ARMY</option>
+                      </select>
+                </td>
+            </tr>
+            <tr><br>
+
+               <td align="right"></td>
+               <td><input type="submit" value="search" /></td>
+            </div>
+    
+       <div style="float:center; width: 50;">
+     <video id="myvid" src="train.mp4" width="500" height="300" controls>
+     </video>
+    </div>
+    </div><br>
+
+<div style="border:2px solid black">
+    <table border="3"; width=80%>
+    
+<tr>
+<th>Tours and Travels</th>
+<th>International Packages</th>
+<th>National Packages</th>
+</tr>
+<tr>
+<td><b><p>Southern travels<br>
+               Kartar travels<br>
+               Vrl travels<br>
+               Kesaneni travels</p></b></td>
+<td><b><p>We have wide range of packages<br>
+                singapore(5 days)<br>
+                london(4 days)<br>
+                united states( 10 days)<br>
+                united kingdom<br></p></b></td>
+<td><b><p>We have wide range of packages<br>
+                goa trip<br>
+                jaipur trip<br>
+                south indian trip<br>
+                north indian trip<br></p></b></td>
+</tr>
+</div>
+</table>
+</body>
+</html>
